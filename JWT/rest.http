@@ -1,0 +1,24 @@
+GET http://localhost:3000/regs HTTP/1.1
+Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlBldGVyIiwiaWF0IjoxNjk4MjA2NDMzfQ.hC3Mxf5sDuMcSPyjhAQ69wqf2Phl24MwbpNl_JfuNxs
+###
+
+POST http://localhost:3000/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "james",
+  "password": "123"
+}
+
+###
+
+POST http://localhost:3000/signup HTTP/1.1
+Content-Type: application/json
+
+{
+  "fullname": "James Lee",
+  "username": "james",
+  "password": "123"
+}
+
+
