@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="htmx-config" content='{"useTemplateFragments":"true"}' />
+    <style>
+      table,
+      th,
+      tr,
+      td {
+        border-collapse: collapse;
+        border: 1px solid #808080;
+      }
+      .col {
+        display: inline-block;
+        width: 45%;
+        vertical-align: top;
+      }
+    </style>
+    <script
+      src="https://unpkg.com/htmx.org@1.9.6"
+      integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>HTMX</title>
+  </head>
+  <body
+    hx-get="/course/list"
+    hx-trigger="load"
+    hx-target="#list"
+    hx-swap="innerHTML"
+  >
+    <h2>Courses</h2>
+    <div id="list" class="col"></div>
+    <div id="edit" class="col">Edit</div>
+  </body>
+</html>

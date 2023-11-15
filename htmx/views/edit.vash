@@ -1,0 +1,39 @@
+<!-- <pre>@JSON.stringify(model.course, null, 4)</pre> -->
+<form
+  hx-post="/course/update"
+  hx-target="#id-@model.course.courseid"
+  hx-swap="outerHTML"
+>
+  <table>
+    <tr>
+      <th>Id :</th>
+      <td>
+        <input type="text" name="courseid" value="@model.course.courseid" />
+      </td>
+    </tr>
+    <tr>
+      <th>Code :</th>
+      <td><input type="text" name="code" value="@model.course.code" /></td>
+    </tr>
+    <tr>
+      <th>Title :</th>
+      <td>
+        <textarea name="title" cols="30" rows="3">@model.course.title</textarea>
+      </td>
+    </tr>
+    <tr>
+      <th>Credits :</th>
+      <td><input type="text" name="crhr" value="@model.course.crhr" /></td>
+    </tr>
+    <tr>
+      <th>Semester :</th>
+      <td>
+        <input type="text" name="semester" value="@model.course.semester" />
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" value="Save" /></td>
+    </tr>
+  </table>
+  <div id="msg">Check</div>
+</form>

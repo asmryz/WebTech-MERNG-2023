@@ -1,0 +1,28 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Code</th>
+    <th>Title</th>
+    <th>Credit</th>
+    <th>Semester</th>
+  </tr>
+  @model.courses.forEach(function(course){
+  <tr id="id-@course.courseid">
+    <td>@course.courseid</td>
+    <td>@course.code</td>
+    <td>
+      <a
+        href="#"
+        hx-get="/course/courseid"
+        hx-trigger="click"
+        hx-target="#edit"
+        hx-swap="innerHTML"
+        hx-vals='{"courseid":@course.courseid}'
+        >@course.title
+      </a>
+    </td>
+    <td>@course.crhr</td>
+    <td>@course.semester</td>
+  </tr>
+  })
+</table>

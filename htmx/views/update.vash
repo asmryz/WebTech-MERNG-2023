@@ -1,0 +1,19 @@
+<tr id="id-@model.course.courseid">
+  <td>@model.course.courseid</td>
+  <td>@model.course.code</td>
+  <td>
+    <a
+      href="#"
+      hx-get="/course/courseid"
+      hx-trigger="click"
+      hx-target="#edit"
+      hx-swap="innerHTML"
+      hx-vals='{"courseid":@model.course.courseid}'
+      >@model.course.title
+    </a>
+  </td>
+  <td>@model.course.crhr</td>
+  <td>@model.course.semester</td>
+</tr>
+
+<div id="edit" class="col" hx-swap-oob="true"></div>
