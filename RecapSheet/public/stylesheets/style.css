@@ -1,0 +1,8 @@
+body {
+  padding: 20px;
+  font: 13px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+table, th, tr, td{
+  border-collapse: collapse;
+  border: 1px solid #808080;
+}

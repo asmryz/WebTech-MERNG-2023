@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta />
+    <title>@model.title</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>S No</th>
+        <th>Name</th>
+        <th>Reg. #</th>
+        @model.heads.forEach(function(head){
+        <th>@head.headname</th>
+        })
+        <th>Total</th>
+        <th>Grade</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        @model.heads.forEach(function(head){
+        <th>@head.total</th>
+        })
+        <th></th>
+        <th></th>
+      </tr>
+      <!-- prettier-ignore -->
+      @{var sno = 0;}
+      @model.students.forEach(function(student){
+        @{
+            var total = 0;
+
+            student.marks.sort((a, b) => a.hid - b.hid);
+        }
+      <tr>
+        @{sno++;}
+        <td>@sno</td>
+        <td>@student.name</td>
+        <td>@student.regno</td>
+        @student.marks.forEach(function(obtain){
+        <td>@obtain.marks</td>
+        @{ total += obtain.marks; } })
+        <td>@total</td>
+        <!-- prettier-ignore -->
+        @{ 
+            var letter=''; 
+            model.grades.forEach(function(grd){
+                if(parseInt(total) >= grd.start && parseInt(total) <= grd.end){
+                    letter = grd.grade;
+                }
+            }) 
+        }
+        <td>@letter</td>
+      </tr>
+      })
+    </table>
+  </body>
+</html>
